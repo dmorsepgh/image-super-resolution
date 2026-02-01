@@ -5,7 +5,7 @@ ISR (Image Super-Resolution) is a library to upscale and improve the quality of 
 
 Read the documentation at: https://idealo.github.io/image-super-resolution/
 
-ISR is compatible with Python 3.6 and is distributed under the Apache 2.0 license.
+ISR is compatible with Python 3.8+ and is distributed under the Apache 2.0 license.
 '''
 
 setup(
@@ -16,7 +16,7 @@ setup(
     description='Image Super Resolution',
     long_description=long_description,
     license='Apache 2.0',
-    install_requires=['imageio', 'numpy', 'tensorflow==2.*', 'tqdm', 'pyaml', 'h5py==2.10.0'],
+    install_requires=['imageio', 'numpy<2.0', 'tensorflow>=2.10,<2.18', 'tqdm', 'pyaml', 'h5py>=3.1.0'],
     extras_require={
         'tests': ['pytest==4.3.0', 'pytest-cov==2.6.1'],
         'docs': ['mkdocs==1.0.4', 'mkdocs-material==4.0.2'],
@@ -30,7 +30,10 @@ setup(
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
