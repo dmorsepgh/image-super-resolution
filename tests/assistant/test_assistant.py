@@ -28,7 +28,7 @@ class RunFunctionTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         logging.disable(logging.CRITICAL)
-        conf = yaml.load(open(os.path.join('tests', 'data', 'config.yml'), 'r'))
+        conf = yaml.safe_load(open(os.path.join('tests', 'data', 'config.yml'), 'r'))
         conf['default'] = {
             'feature_extractor': False,
             'discriminator': False,

@@ -179,7 +179,7 @@ class UtilsClassTest(unittest.TestCase):
     
     @patch('builtins.input', return_value='0')
     def test_select_dataset(self, sel_opt):
-        conf = yaml.load(open(os.path.join('tests', 'data', 'config.yml'), 'r'))
+        conf = yaml.safe_load(open(os.path.join('tests', 'data', 'config.yml'), 'r'))
         conf['test_sets'] = {'test_test_set': {}}
         conf['training_sets'] = {'test_train_set': {}}
         

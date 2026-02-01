@@ -16,7 +16,7 @@ class PredictorClassTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         logging.disable(logging.CRITICAL)
-        cls.setup = yaml.load(Path('tests/data/config.yml').read_text(), Loader=yaml.FullLoader)
+        cls.setup = yaml.safe_load(Path('tests/data/config.yml').read_text())
         cls.RDN = RDN(arch_params=cls.setup['rdn'], patch_size=cls.setup['patch_size'])
         
         cls.temp_data = Path('tests/temporary_test_data')

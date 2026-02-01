@@ -166,7 +166,7 @@ def setup(config_file='config.yml', default=False, training=False, prediction=Fa
     and arguments parse from CLI.
     """
     
-    conf = yaml.load(open(config_file, 'r'), Loader=yaml.FullLoader)
+    conf = yaml.safe_load(open(config_file, 'r'))
     
     if training:
         session_type = 'training'

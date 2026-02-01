@@ -14,7 +14,7 @@ from ISR.models.cut_vgg19 import Cut_VGG19
 class ModelsClassTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.setup = yaml.load(open(os.path.join('tests', 'data', 'config.yml'), 'r'))
+        cls.setup = yaml.safe_load(open(os.path.join('tests', 'data', 'config.yml'), 'r'))
         cls.weights_path = {
             'generator': os.path.join(cls.setup['weights_dir'], 'test_gen_weights.hdf5'),
             'discriminator': os.path.join(cls.setup['weights_dir'], 'test_dis_weights.hdf5'),

@@ -14,7 +14,7 @@ from ISR.models.cut_vgg19 import Cut_VGG19
 class UtilsClassTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.setup = yaml.load(Path('./tests/data/config.yml').read_text())
+        cls.setup = yaml.safe_load(Path('./tests/data/config.yml').read_text())
         cls.RRDN = RRDN(arch_params=cls.setup['rrdn'], patch_size=cls.setup['patch_size'])
         cls.f_ext = Cut_VGG19(patch_size=cls.setup['patch_size'], layers_to_extract=[1, 2])
         cls.discr = Discriminator(patch_size=cls.setup['patch_size'])

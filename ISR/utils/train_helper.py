@@ -108,7 +108,7 @@ class TrainerHelper:
                     self.pretrained_generator_weights.parent / self.session_config_name
             )
             if session_config_path.exists():
-                return yaml.load(session_config_path.read_text(), Loader=yaml.FullLoader)
+                return yaml.safe_load(session_config_path.read_text())
             else:
                 self.logger.warning('Could not find previous configuration')
                 return {}

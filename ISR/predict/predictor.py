@@ -62,7 +62,7 @@ class Predictor:
 
         session_config_path = self.weights_path.parent / 'session_config.yml'
         if session_config_path.exists():
-            conf = yaml.load(session_config_path.read_text(), Loader=yaml.FullLoader)
+            conf = yaml.safe_load(session_config_path.read_text())
         else:
             self.logger.warning('Could not find weights training configuration')
             conf = {}
